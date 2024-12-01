@@ -10,7 +10,7 @@ export default {
         redditOrange: '#ff4500',
       },
       fontFamily: {
-        roboto: ['Roboto', 'sans-serif'],
+        roboto: ['Roboto', 'ui-sans-serif', 'system-ui', 'sans-serif'],
       },
     },
   },

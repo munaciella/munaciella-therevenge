@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import ArticleCard from '../ArticleCard/ArticleCard';
+import ArticleCard from './ArticleCard';
 import { useParams } from 'react-router-dom';
 import { getArticleById } from '../../API/api';
-import CommentList from '../CommentList/CommentList';
+import CommentList from '../CommentList';
 import Error from '../Error/Error';
 
 const ArticlePage = (comment) => {
@@ -24,19 +24,17 @@ const ArticlePage = (comment) => {
       .finally(() => {
         setIsLoading(false);
       });
-  }, []);
+  }, [article_id]);
 
-  if (isLoading) return <h2>Loading...</h2>;
+  if (isLoading) return <h2 className="text-center text-lg font-semibold">Loading...</h2>;
   else if (isError) return <Error title="404 Article Not Found" />
   
   return  (
-    <>
-    <div className="article-page">
-  <ArticleCard key={article.article_id} article={article} />
-  <CommentList comment={comment} />
-  </div>
-  </>
-  )
+    <div className="p-4 md:p-6 max-w-4xl mx-auto my-8 border rounded-xl shadow-lg bg-white">
+      <ArticleCard key={article.article_id} article={article} />
+      <CommentList comment={comment} />
+    </div>
+  );
 };
 
 export default ArticlePage;
