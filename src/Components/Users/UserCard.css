@@ -1,5 +1,4 @@
 .user-card {
-    background-color: antiquewhite; 
     padding: 10px;
     border-radius: 12px; 
     width: 200px; 
@@ -11,7 +10,6 @@
     width: 90px; 
     height: 90px;
     border-radius: 15%; 
-    background-color: antiquewhite;
     padding-top: 10px;
     padding-bottom: -5px;
   }
@@ -21,6 +19,5 @@
     margin-top: 5px; 
     text-align: center; 
     color: black;
-    font-family: 'Futura', sans-serif;
   }
   

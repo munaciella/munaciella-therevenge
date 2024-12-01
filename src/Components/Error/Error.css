@@ -1,10 +1,4 @@
-  :root {
-    --background-color: #2a2a2a;
-    --text-color: #CCCCCC;
-    --link-color: #0079D3;
-  }
-  
-  .error-container {
+.error-container {
     background-color: var(--background-color);
     color: var(--text-color);
     border: 1px solid var(--text-color);
@@ -15,12 +9,10 @@
   
   .error-title {
    font-size:24px ;
-   font-family:'Futura', sans-serif ;
   }
   
   .error-msg {
    margin-top :12px ;
-   font-family:'Futura', sans-serif ;
   }
   
   .error-link {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import ArticleCard from '../ArticleCard/ArticleCard';
+import ArticleCard from './ArticleCard';
 import { getArticles } from '../../API/api';
 import Error from '../Error/Error';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -26,24 +26,22 @@ const ArticlesList = () => {
 
   if (isLoading) {
     return (
-      <div style={{ position: 'fixed',
-      top: '50%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)', display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px' }}>
+      <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center p-5">
         <CircularProgress />
       </div>
     );
+  } else if (isError) {
+    return <Error title="404 Article Not Found" />;
   }
-  else if (isError) return <Error title="404 Article Not Found" />
 
   return (
-    <>
-    <div className="article-list">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
       {articles.map((article) => {
-        return <ArticleCard key={article.article_id} article={article} className="ArticleCard"/>;
+        return (
+          <ArticleCard key={article.article_id} article={article} className="ArticleCard" />
+        );
       })}
-      </div>
-    </>
+    </div>
   );
 };
 

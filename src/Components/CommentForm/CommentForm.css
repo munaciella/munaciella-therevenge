@@ -1,5 +1,4 @@
 .CommentForm label {
-  font-family: 'Futura', sans-serif;
   display: block;
   font-weight: bold;
 }
@@ -10,7 +9,6 @@
 }
 
 .CommentForm textarea {
-  font-family: 'Futura', sans-serif;
   width: 70%;
   height: 50px;
   padding: 0.5em 0.75em;
@@ -24,7 +22,6 @@
 
 .CommentForm button {
   font-size: 14px;
-  font-family: 'Futura', sans-serif;
   margin-left: 80px;
   margin-right: 80px;
   background-color: #ff4500;

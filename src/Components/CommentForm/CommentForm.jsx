@@ -1,5 +1,5 @@
 import { postComment } from '../../API/api';
-import { UsernameContext } from '../../Components/UsernameContext/UsernameContext';
+import { UsernameContext } from '../UsernameContext';
 import { useContext, useState } from 'react';
 import './CommentForm.css';
 

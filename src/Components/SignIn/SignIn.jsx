@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { UsernameContext } from '../UsernameContext/UsernameContext';
+import { UsernameContext } from '../UsernameContext';
 import { getUser } from '../../API/api'; 
 import './SignIn.css';
 import { CircularProgress } from '@mui/material';
