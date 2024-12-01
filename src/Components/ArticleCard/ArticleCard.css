@@ -69,3 +69,20 @@ body {
     margin-bottom: 5px; 
 }
 }
+
+.article-image {
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+.article-card {
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
