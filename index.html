@@ -1,19 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Munaciella News - A Reddit-inspired news web app to view, upvote, downvote, comment, and more." />
+    <meta
+      name="description"
+      content="Munaciella News - A Reddit-inspired news web app to view, upvote, downvote, comment, and more."
+    />
     <meta name="author" content="Francesco Vurchio" />
     <meta name="theme-color" content="#ff4500" />
     <title>Munaciella News</title>
     <link rel="icon" href="/favicon.ico" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       if (
         localStorage.getItem('theme') === 'dark' ||
-        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        (!localStorage.getItem('theme') &&
+          window.matchMedia('(prefers-color-scheme: dark)').matches)
       ) {
         document.documentElement.classList.add('dark');
       } else {
@@ -22,7 +29,7 @@
     </script>
   </head>
   <body class="bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-200">
-    <div id="root"></div>
+    <div id="root" class="max-w-screen-xl mx-auto p-4 text-center"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
