@@ -4,7 +4,7 @@ const NavBar = () => {
   return (
     <>
       <header className="bg-redditOrange dark:bg-gray-800 text-white py-4 md:py-6">
-        <h1 className="text-2xl md:text-4xl font-bold text-center">
+        <h1 className="text-3xl md:text-5xl font-bold text-center">
           Munaciella News
         </h1>
       </header>

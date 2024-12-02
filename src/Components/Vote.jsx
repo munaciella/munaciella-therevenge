@@ -1,8 +1,7 @@
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ThumbDownIcon from '@mui/icons-material/ThumbDown';
 import { useState } from 'react';
-import { voteArticle } from '../../API/api';
-import './Vote.css';
+import { voteArticle } from '../API/api';
 
 const Vote = ({ article_id, votes }) => {
   const [currVotes, setCurrVotes] = useState(votes);
@@ -22,6 +21,7 @@ const Vote = ({ article_id, votes }) => {
       });
     }
   };
+
   const downVote = () => {
     if (timesClicked >= 0) {
       setTimesClicked(timesClicked - 1);
@@ -38,30 +38,26 @@ const Vote = ({ article_id, votes }) => {
 
   return (
     <>
-      <div className="thumbs-up">
-        <p className="votes">Votes: {currVotes}</p>
+      <div className="flex items-center justify-center">
+        <p className="text-lg mr-4">Votes: {currVotes}</p>
         <div
-          size="small"
           onClick={upVote}
-          color={buttonColor}
-          className="fab-button"
+          className="flex items-center justify-center cursor-pointer bg-pink-500 text-white rounded-full px-2 py-1 transition-colors duration-300 hover:bg-pink-600"
         >
           <ThumbUpIcon />
         </div>
       </div>
-      <div className="thumbs-down">
+      <div className="flex items-center justify-center mt-2">
         <div
-          size="small"
           onClick={downVote}
-          color={buttonColor}
-          className="fab-button"
+          className="flex items-center justify-center cursor-pointer bg-pink-500 text-white rounded-full px-2 py-1 transition-colors duration-300 hover:bg-pink-600"
         >
           <ThumbDownIcon />
         </div>
       </div>
       {buttonColor === 'error' && (
-        <p style={{ color: 'red' }} className="error-message">
-          Error on voting please try again
+        <p className="text-red-500 text-center mt-2">
+          Error on voting, please try again.
         </p>
       )}
     </>

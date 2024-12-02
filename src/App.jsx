@@ -1,15 +1,15 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { UsernameProvider } from './Components/UsernameContext.jsx'
-import ArticlesList from './Components/routes/ArticlesList.jsx';
-import ArticlePage from './Components/routes/ArticlePage.jsx';
-import LoginPage from './Components/LoginPage/LoginPage.jsx';
-import SignUp from './Components/SignUp/SignUp.jsx';
-import Error from './Components/Error/Error.jsx';
+import ArticlesList from './routes/ArticlesList.jsx';
+import ArticlePage from './routes/ArticlePage.jsx';
+import LoginPage from './routes/LoginPage.jsx';
+import SignUp from './routes/SignUp.jsx';
+import Error from './routes/Error.jsx';
 import NavBar from './Components/NavBar.jsx';
 
 function App() {
   return (
-    <div className="bg-white dark:bg-gray-900 text-black dark:text-white min-h-screen">
+    <div className="min-h-screen">
       <BrowserRouter>
         <UsernameProvider>
         <NavBar />

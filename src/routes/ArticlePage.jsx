@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import ArticleCard from './ArticleCard';
 import { useParams } from 'react-router-dom';
-import { getArticleById } from '../../API/api';
-import CommentList from '../CommentList';
-import Error from '../Error/Error';
+import { getArticleById } from '../API/api';
+import Error from './Error';
+import ArticleCard from '../Components//ArticleCard';
+import CommentList from './CommentList';
 
 const ArticlePage = (comment) => {
   const { article_id } = useParams();
