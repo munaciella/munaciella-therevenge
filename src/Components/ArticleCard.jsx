@@ -1,6 +1,6 @@
 import Card from '@mui/material/Card';
 import { Link } from 'react-router-dom';
-import Vote from '../Vote/Vote';
+import Vote from './Vote'
 
 const ArticleCard = ({ article }) => {
   const { article_id, body, votes, title, topic, article_img_url, author, comment_count, created_at } = article;

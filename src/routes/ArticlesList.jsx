@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import ArticleCard from './ArticleCard';
-import { getArticles } from '../../API/api';
-import Error from '../Error/Error';
+import ArticleCard from '../Components/ArticleCard';
+import { getArticles } from '../API/api';
+import Error from './Error';
 import CircularProgress from '@mui/material/CircularProgress';
 
 const ArticlesList = () => {
@@ -35,7 +35,7 @@ const ArticlesList = () => {
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 p-4">
       {articles.map((article) => {
         return (
           <ArticleCard key={article.article_id} article={article} className="ArticleCard" />
