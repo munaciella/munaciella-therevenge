@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { SunIcon, MoonIcon } from '@heroicons/react/24/solid';
 
 const ThemeToggle = () => {
   const [theme, setTheme] = useState(() => {
@@ -13,9 +14,14 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-      className="p-2 rounded bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+      className="p-2 rounded transition-all"
+      aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
     >
-      Toggle {theme === 'dark' ? 'Light' : 'Dark'} Mode
+      {theme === 'dark' ? (
+        <SunIcon className="w-8 h-8 text-yellow-400 bg-transparent" />
+      ) : (
+        <MoonIcon className="w-8 h-8 text-gray-700 bg-transparent" />
+      )}
     </button>
   );
 };
