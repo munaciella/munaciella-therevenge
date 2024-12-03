@@ -6,14 +6,25 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 const ArticlesList = () => {
   const [articles, setArticles] = useState([]);
+  const [filteredArticles, setFilteredArticles] = useState([]);
+  const [topics, setTopics] = useState([]);
+  const [selectedTopic, setSelectedTopic] = useState('All topics');
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(12);
 
   useEffect(() => {
     setIsLoading(true);
     getArticles()
       .then((response) => {
-        setArticles(response.data.articles);
+        const allArticles = response.data.articles;
+        setArticles(allArticles);
+        setFilteredArticles(allArticles);
+        const uniqueTopics = [
+          'All topics',
+          ...new Set(allArticles.map((article) => article.topic)),
+        ];
+        setTopics(uniqueTopics);
       })
       .catch((err) => {
         console.log(err);
@@ -23,6 +34,24 @@ const ArticlesList = () => {
         setIsLoading(false);
       });
   }, []);
+
+  const handleFilterChange = (e) => {
+    const topic = e.target.value;
+    setSelectedTopic(topic);
+    setVisibleCount(12);
+
+    if (topic === 'All topics') {
+      setFilteredArticles(articles);
+    } else {
+      setFilteredArticles(
+        articles.filter((article) => article.topic === topic)
+      );
+    }
+  };
+
+  const handleShowMore = () => {
+    setVisibleCount((prevCount) => prevCount + 12);
+  };
 
   if (isLoading) {
     return (
@@ -35,12 +64,41 @@ const ArticlesList = () => {
   }
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 p-4">
-      {articles.map((article) => {
-        return (
-          <ArticleCard key={article.article_id} article={article} className="ArticleCard" />
-        );
-      })}
+    <div className="p-6">
+      <div className="mb-6 flex justify-center">
+        <select
+          value={selectedTopic}
+          onChange={handleFilterChange}
+          className="px-4 py-2 border border-gray-400 rounded-lg bg-white dark:bg-gray-800 dark:text-white focus:outline-none relative"
+        >
+          {topics.map((topic) => (
+            <option
+              key={topic}
+              value={topic}
+              className="text-base hover:font-bold hover:bg-gray-200 dark:hover:bg-gray-700"
+            >
+              {topic}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {filteredArticles.slice(0, visibleCount).map((article) => (
+          <ArticleCard key={article.article_id} article={article} />
+        ))}
+      </div>
+
+      {visibleCount < filteredArticles.length && (
+        <div className="mt-6 flex justify-center">
+          <button
+            onClick={handleShowMore}
+            className="px-6 py-2 mt-8 bg-redditOrange text-white rounded-lg hover:bg-orange-600 transition-colors"
+          >
+            Show More Articles
+          </button>
+        </div>
+      )}
     </div>
   );
 };

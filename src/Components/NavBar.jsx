@@ -16,7 +16,7 @@ const NavBar = () => {
                 location.pathname === '/login' ? 'underline' : 'hover:underline'
               }`}
             >
-              Users
+              Log In
             </Link>
           </li>
           <li>

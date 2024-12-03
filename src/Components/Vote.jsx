@@ -13,7 +13,7 @@ const Vote = ({ article_id, votes }) => {
       setTimesClicked(timesClicked + 1);
       setTimeout(() => {
         setCurrVotes(currVotes + 1);
-      }, 2000);
+      }, 1000);
       voteArticle(article_id, 1).then((data) => {
         if (data.error) {
           setButtonColor('error');
@@ -27,7 +27,7 @@ const Vote = ({ article_id, votes }) => {
       setTimesClicked(timesClicked - 1);
       setTimeout(() => {
         setCurrVotes(currVotes - 1);
-      }, 2000);
+      }, 1000);
       voteArticle(article_id, -1).then((data) => {
         if (data.error) {
           setButtonColor('error');
@@ -37,30 +37,32 @@ const Vote = ({ article_id, votes }) => {
   };
 
   return (
-    <>
-      <div className="flex items-center justify-center">
-        <p className="text-lg mr-4">Votes: {currVotes}</p>
+    <div className="text-center">
+      <p className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-2">
+        {currVotes}
+      </p>
+      
+      <div className="flex items-center justify-center space-x-6">
         <div
           onClick={upVote}
-          className="flex items-center justify-center cursor-pointer bg-pink-500 text-white rounded-full px-2 py-1 transition-colors duration-300 hover:bg-pink-600"
+          className="flex items-center justify-center cursor-pointer text-gray-500 hover:text-green-500 transition-colors duration-300"
         >
-          <ThumbUpIcon />
+          <ThumbUpIcon className="text-4xl" />
         </div>
-      </div>
-      <div className="flex items-center justify-center mt-2">
         <div
           onClick={downVote}
-          className="flex items-center justify-center cursor-pointer bg-pink-500 text-white rounded-full px-2 py-1 transition-colors duration-300 hover:bg-pink-600"
+          className="flex items-center justify-center cursor-pointer text-gray-500 hover:text-red-500 transition-colors duration-300"
         >
-          <ThumbDownIcon />
+          <ThumbDownIcon className="text-4xl" />
         </div>
       </div>
+
       {buttonColor === 'error' && (
-        <p className="text-red-500 text-center mt-2">
+        <p className="text-red-500 mt-2">
           Error on voting, please try again.
         </p>
       )}
-    </>
+    </div>
   );
 };
 
