@@ -1,15 +1,17 @@
-import { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
-import { UsernameContext } from "../Components/UsernameContext";
-import { getUser } from "../API/api";
-import { CircularProgress } from "@mui/material";
+import { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { getUser } from '../API/api';
+import UsernameContext from '../Components/UsernameContext';
+import { CircularProgress } from '@mui/material';
 
 const SignIn = () => {
-  const { setUsername } = useContext(UsernameContext);
-  const [usernameInput, setUsernameInput] = useState("");
+  const { username, setUsername } = useContext(UsernameContext);
+  const [usernameInput, setUsernameInput] = useState('');
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const nav = useNavigate();
+
+  console.log({ username, setUsername });
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -18,7 +20,8 @@ const SignIn = () => {
 
     try {
       const response = await getUser(usernameInput);
-      setUsername(response.data.users.username);
+      console.log('API Response:', response);
+      setUsername(response.data.user.username);
       nav(`/`);
     } catch (err) {
       console.error(err);
@@ -35,7 +38,10 @@ const SignIn = () => {
         className="bg-white p-8 rounded-lg shadow-lg w-full max-w-sm"
       >
         <h2 className="text-2xl font-bold text-gray-800 mb-6">Sign In</h2>
-        <label htmlFor="username" className="block text-gray-700 font-medium mb-2">
+        <label
+          htmlFor="username"
+          className="block text-gray-700 font-medium mb-2"
+        >
           Username
         </label>
         <input
@@ -51,7 +57,11 @@ const SignIn = () => {
           type="submit"
           className="w-full bg-blue-500 text-white py-2 rounded-lg font-medium hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
         >
-          {isLoading ? <CircularProgress size={20} color="inherit" /> : "Sign In"}
+          {isLoading ? (
+            <CircularProgress size={20} color="inherit" />
+          ) : (
+            'Sign In'
+          )}
         </button>
         {isError && (
           <p className="text-red-500 text-sm mt-4">

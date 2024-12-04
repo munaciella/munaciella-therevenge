@@ -1,15 +1,5 @@
-import { createContext, useEffect, useState } from 'react';
-export const UsernameContext = createContext();
+import { createContext } from 'react';
 
-export const UsernameProvider = ({ children }) => {
-  const [username, setUsername] = useState(sessionStorage.getItem('username'));
-  useEffect(() => {
-    sessionStorage.setItem('username', 'tickle122');
-  }, [username]);
+const UsernameContext = createContext();
 
-  return (
-    <UsernameContext.Provider value={{ username, setUsername }}>
-      {children}
-    </UsernameContext.Provider>
-  );
-};
+export default UsernameContext;

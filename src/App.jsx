@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { UsernameProvider } from './Components/UsernameContext.jsx'
+import { UsernameProvider } from './Components/UsernameProvider.jsx';
 import ArticlesList from './routes/ArticlesList.jsx';
 import ArticlePage from './routes/ArticlePage.jsx';
 import LoginPage from './routes/LoginPage.jsx';
