@@ -1,5 +1,5 @@
 import { postComment } from '../API/api';
-import { UsernameContext } from '../Components/UsernameContext';
+import UsernameContext from '../Components/UsernameContext';
 import { useContext, useState } from 'react';
 
 const CommentForm = ({ article_id, setComments }) => {
