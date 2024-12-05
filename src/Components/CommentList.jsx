@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { getComments, deleteComment } from '../API/api';
 import { useParams } from 'react-router-dom';
 import CommentForm from './CommentForm';
-import CommentCard from '../Components/CommentCard';
+import CommentCard from './CommentCard';
 
 const CommentList = () => {
   const { article_id } = useParams();
