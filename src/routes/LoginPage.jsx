@@ -7,14 +7,16 @@ import { CircularProgress } from "@mui/material";
 export default function LoginPage() {
   const { username, setUsername } = useContext(UsernameContext);
   const [usernameInput, setUsernameInput] = useState("");
+  const [passwordInput, setPasswordInput] = useState("");
   const [users, setUsers] = useState([]);
   const [count, setCount] = useState(2);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   const [userListError, setUserListError] = useState(false);
   const nav = useNavigate();
 
-  console.log(username);
+  console.log("Username:", username);
 
   useEffect(() => {
     setIsLoading(true);
@@ -35,11 +37,18 @@ export default function LoginPage() {
     event.preventDefault();
     setIsLoading(true);
     setIsError(false);
+    setIsSuccess(false);
 
     try {
       const response = await getUser(usernameInput);
+
+      if (passwordInput !== "password123") {
+        throw new Error("Invalid password");
+      }
+
       setUsername(response.data.user.username);
-      nav(`/`);
+      setIsSuccess(true);
+      setTimeout(() => nav(`/`), 2000);
     } catch {
       setIsError(true);
     } finally {
@@ -69,6 +78,23 @@ export default function LoginPage() {
             onChange={(e) => setUsernameInput(e.target.value)}
             className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-redditOrange mb-4"
           />
+
+          <label
+            htmlFor="password"
+            className="block text-gray-700 dark:text-gray-300 font-medium mb-2"
+          >
+            Password
+          </label>
+          <input
+            type="password"
+            id="password"
+            placeholder="Enter your password"
+            required
+            value={passwordInput}
+            onChange={(e) => setPasswordInput(e.target.value)}
+            className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-redditOrange mb-4"
+          />
+
           <button
             type="submit"
             className="w-full bg-redditOrange text-white py-2 rounded-lg font-medium focus:outline-none"
@@ -81,7 +107,12 @@ export default function LoginPage() {
           </button>
           {isError && (
             <p className="text-red-500 text-sm mt-4">
-              Invalid username. Please try again.
+              Invalid username or password. Please try again.
+            </p>
+          )}
+          {isSuccess && (
+            <p className="text-green-500 text-sm mt-4">
+              Logged in successfully! Redirecting...
             </p>
           )}
         </form>
@@ -133,7 +164,7 @@ function UserCard({ user }) {
       <img
         src={url}
         alt={`Avatar of ${username}`}
-        className="w-44 h-44 rounded-lg object-cover mb-4"
+        className="w-auto h-auto rounded-lg object-cover mb-4"
       />
       <h3 className="text-lg font-medium text-gray-800 dark:text-gray-200">
         {username}
