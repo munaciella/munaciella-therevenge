@@ -83,7 +83,7 @@ const ArticlesList = () => {
         </select>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 xs:gap-12">
         {filteredArticles.slice(0, visibleCount).map((article) => (
           <ArticleCard key={article.article_id} article={article} />
         ))}

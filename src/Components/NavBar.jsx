@@ -1,8 +1,9 @@
-import { Link, useLocation } from 'react-router-dom';
-import ThemeToggle from './ThemeToggle';
+import { Link, useLocation } from "react-router-dom";
+import ThemeToggle from "./ThemeToggle";
 
 const NavBar = () => {
   const location = useLocation();
+
   return (
     <header className="bg-redditOrange dark:bg-gray-800 text-white rounded-lg shadow-md">
       <nav className="flex items-center px-6 py-4">
@@ -10,8 +11,8 @@ const NavBar = () => {
           <li>
             <Link
               to="/login"
-              className={`transition-colors ${
-                location.pathname === '/login' ? 'underline' : 'hover:underline'
+              className={`transition-colors underline-offset-4 ${
+                location.pathname === "/login" ? "underline" : "hover:underline"
               }`}
             >
               Log In
@@ -19,12 +20,12 @@ const NavBar = () => {
           </li>
           <li>
             <Link
-              to="/signup"
-              className={`transition-colors ${
-                location.pathname === '/signup' ? 'underline' : 'hover:underline'
+              to="/about"
+              className={`transition-colors underline-offset-4 ${
+                location.pathname === "/about" ? "underline" : "hover:underline"
               }`}
             >
-              Sign Up
+              About
             </Link>
           </li>
         </ul>
@@ -34,7 +35,7 @@ const NavBar = () => {
             <img
               src="assets/Munaciella-logo.jpg"
               alt="Munaciella News Logo"
-              className="w-28 h-28 rounded-full mx-auto"
+              className="w-20 h-20 rounded-full mx-auto object-cover shadow-lg"
             />
           </Link>
         </div>
