@@ -5,6 +5,7 @@ import ArticlePage from './routes/ArticlePage.jsx';
 import LoginPage from './routes/LoginPage.jsx';
 import Error from './routes/Error.jsx';
 import NavBar from './Components/NavBar.jsx';
+import AboutPage from './routes/AboutPage.jsx';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
               <Route path="/" element={<ArticlesList />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/articles/:article_id" element={<ArticlePage />} />
+              <Route path="/about" element={<AboutPage />} />
               <Route
                 path="*"
                 element={
