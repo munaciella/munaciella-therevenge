@@ -5,7 +5,7 @@ const NavBar = () => {
   const location = useLocation();
 
   return (
-    <header className="bg-redditOrange dark:bg-gray-800 text-white rounded-lg shadow-md">
+    <header className="bg-redditOrange dark:bg-gray-800 text-white shadow-lg">
       <nav className="flex items-center px-6 py-4">
         <ul className="flex space-x-8 text-lg font-semibold">
           <li>

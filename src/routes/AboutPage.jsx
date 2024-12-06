@@ -1,6 +1,6 @@
 const AboutPage = () => {
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 flex flex-col items-center justify-center py-12 px-6">
+    <div className="min-h-screen dark:bg-gray-900 text-gray-800 dark:text-gray-200 flex flex-col items-center justify-center py-12 px-6 mt-4">
       <div className="max-w-3xl bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
         <h1 className="text-3xl font-bold text-center mb-6 text-redditOrange">
           About Munaciella News

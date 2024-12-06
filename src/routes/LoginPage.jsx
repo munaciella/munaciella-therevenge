@@ -57,7 +57,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex flex-col items-center py-8 px-4 mt-8">
+    <div className="min-h-screen dark:bg-gray-900 flex flex-col items-center py-8 px-4 mt-16">
       <div className="w-full max-w-md bg-white dark:bg-gray-800 rounded-lg shadow-lg p-6 mb-8">
         <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6 text-center">
           Sign In

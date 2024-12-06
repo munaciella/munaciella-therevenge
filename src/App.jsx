@@ -6,14 +6,15 @@ import LoginPage from './routes/LoginPage.jsx';
 import Error from './routes/Error.jsx';
 import NavBar from './Components/NavBar.jsx';
 import AboutPage from './routes/AboutPage.jsx';
+import Footer from './Components/Footer.jsx';
 
 function App() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
       <BrowserRouter>
         <UsernameProvider>
-        <NavBar />
-          <main className="container mx-auto px-4 py-6">
+          <NavBar />
+          <main className="flex-grow container mx-auto px-4 py-6">
             <Routes>
               <Route path="/" element={<ArticlesList />} />
               <Route path="/login" element={<LoginPage />} />
@@ -30,6 +31,7 @@ function App() {
               />
             </Routes>
           </main>
+          <Footer />
         </UsernameProvider>
       </BrowserRouter>
     </div>
