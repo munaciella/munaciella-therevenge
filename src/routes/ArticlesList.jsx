@@ -69,7 +69,7 @@ const ArticlesList = () => {
         <select
           value={selectedTopic}
           onChange={handleFilterChange}
-          className="px-4 py-2 border border-gray-400 rounded-lg bg-white dark:bg-gray-800 dark:text-white focus:outline-none relative"
+          className="px-4 py-2 border border-gray-400 rounded-xl bg-white dark:bg-gray-800 dark:text-white focus:outline-none relative"
         >
           {topics.map((topic) => (
             <option
@@ -93,7 +93,7 @@ const ArticlesList = () => {
         <div className="mt-6 flex justify-center">
           <button
             onClick={handleShowMore}
-            className="px-6 py-2 mt-8 bg-redditOrange text-white rounded-lg hover:bg-orange-600 transition-colors"
+            className="px-6 py-2 mt-8 bg-redditOrange text-white rounded-xl hover:bg-orange-600 transition-colors"
           >
             Show More Articles
           </button>

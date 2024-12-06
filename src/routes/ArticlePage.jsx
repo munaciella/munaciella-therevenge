@@ -30,7 +30,7 @@ const ArticlePage = (comment) => {
   else if (isError) return <Error title="404 Article Not Found" />
   
   return  (
-    <div className="p-4 md:p-6 max-w-4xl mx-auto my-8 border rounded-xl shadow-lg bg-white">
+    <div className="p-4 md:p-6 max-w-4xl mx-auto my-8 rounded-xl shadow-lg bg-white dark:bg-gray-800 dark:text-white">
       <ArticleCard key={article.article_id} article={article} />
       <CommentList comment={comment} />
     </div>
