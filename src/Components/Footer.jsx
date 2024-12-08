@@ -1,3 +1,5 @@
+// eslint-disable-next-line no-unused-vars
+import React from "react"
 import { Link } from 'react-router-dom';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
@@ -45,7 +47,7 @@ const Footer = () => {
               rel="noopener noreferrer"
             >
               <img
-                className="w-8 h-8 inline-block align-middle ml-1"
+                className="w-9 h-9 inline-block align-middle ml-1"
                 src="assets/Fran-avatar.png"
                 alt="Francesco's Image"
               />
@@ -58,6 +60,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-blue-500 transition"
+              aria-label="LinkedIn"
             >
               <FaLinkedin className="w-6 h-6" />
             </a>
@@ -66,6 +69,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-gray-700 dark:hover:text-gray-300 transition"
+              aria-label="GitHub"
             >
               <FaGithub className="w-6 h-6" />
             </a>
