@@ -1,3 +1,5 @@
+// eslint-disable-next-line no-unused-vars
+import React from "react";
 import Card from '@mui/material/Card';
 import { Link } from 'react-router-dom';
 import Vote from './Vote';
