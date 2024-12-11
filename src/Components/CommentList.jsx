@@ -1,4 +1,5 @@
-import { useEffect, useState, useContext } from 'react';
+// eslint-disable-next-line no-unused-vars
+import React, { useEffect, useState, useContext } from 'react';
 import { getComments, deleteComment, postComment } from '../API/api';
 import { useParams } from 'react-router-dom';
 import UsernameContext from '../Components/UsernameContext';
