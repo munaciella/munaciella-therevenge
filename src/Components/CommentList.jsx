@@ -3,6 +3,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { getComments, deleteComment, postComment } from '../API/api';
 import { useParams } from 'react-router-dom';
 import UsernameContext from '../Components/UsernameContext';
+import { act } from '@testing-library/react';
 
 const CommentList = () => {
   const { article_id } = useParams();
@@ -15,6 +16,7 @@ const CommentList = () => {
   const { username } = useContext(UsernameContext);
 
   useEffect(() => {
+    act(() => {
     setIsLoading(true);
     getComments(article_id)
       .then((response) => {
@@ -26,6 +28,7 @@ const CommentList = () => {
         setIsError(true);
         setIsLoading(false);
       });
+    });
   }, [article_id]);
 
   const handleSubmit = (event) => {
