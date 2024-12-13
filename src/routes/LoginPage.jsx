@@ -1,4 +1,5 @@
-import { useState, useEffect, useContext } from "react";
+// eslint-disable-next-line no-unused-vars
+import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { getUsers, getUser } from "../API/api";
 import UsernameContext from "../Components/UsernameContext";
@@ -16,22 +17,22 @@ export default function LoginPage() {
   const [userListError, setUserListError] = useState(false);
   const nav = useNavigate();
 
-  console.log("Username:", username);
-
   useEffect(() => {
-    setIsLoading(true);
-    getUsers()
-      .then(({ users }) => {
-        setUsers(users);
-        setUserListError(false);
-      })
-      .catch(() => {
-        setUserListError(true);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-  }, []);
+    if (getUsers) {
+      setIsLoading(true);
+      getUsers()
+        .then(({ users }) => {
+          setUsers(users);
+          setUserListError(false);
+        })
+        .catch(() => {
+          setUserListError(true);
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
+    }
+  }, [getUsers]);
 
   const handleSignIn = async (event) => {
     event.preventDefault();
@@ -96,11 +97,11 @@ export default function LoginPage() {
           />
 
           <button
-            type="submit"
             className="w-full bg-redditOrange text-white py-2 rounded-lg font-medium focus:outline-none"
+            type="submit"
           >
             {isLoading ? (
-              <CircularProgress size={20} color="inherit" />
+              <CircularProgress size={20} color="inherit" role="progressbar" aria-label="Loading" />
             ) : (
               "Sign In"
             )}
