@@ -6,7 +6,7 @@ import { FaLinkedin, FaGithub } from 'react-icons/fa';
 const Footer = () => {
   return (
     <footer className="w-full bg-gray-100 border-t border-gray-300 dark:border-gray-500 dark:bg-gray-900 text-gray-800 dark:text-gray-200 py-6 mt-16">
-      <div className="max-w-7xl mx-auto px-0 grid grid-cols-1 md:grid-cols-3 gap-6 items-center text-center md:text-left">
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 items-center text-center md:text-left">
         <div>
           <Link to="/">
             <img
