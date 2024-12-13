@@ -1,3 +1,6 @@
+// eslint-disable-next-line no-unused-vars
+import React from 'react';
+
 const AboutPage = () => {
   return (
     <div className="min-h-screen dark:bg-gray-900 text-gray-800 dark:text-gray-200 flex flex-col items-center justify-center py-12 px-6 mt-4">
