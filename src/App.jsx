@@ -11,7 +11,12 @@ import Footer from './Components/Footer.jsx';
 function App() {
   return (
     <div className="min-h-screen flex flex-col">
-      <BrowserRouter>
+      <BrowserRouter
+        future={{
+          v7_startTransition: true,
+          v7_relativeSplatPath: true,
+        }}
+      >
         <UsernameProvider>
           <NavBar />
           <main className="flex-grow container mx-auto px-4 py-6">
