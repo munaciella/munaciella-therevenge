@@ -93,9 +93,9 @@ http://localhost:5173
 
 The backend handles the following functionalities:
 
-•	Article and comment management
-•	User authentication
-•	API endpoints for upvoting/downvoting
+- Article and comment management
+- User authentication
+- API endpoints for upvoting/downvoting
 
 ---
 
@@ -118,11 +118,11 @@ munaciella-news/
 
 ## Future Improvements
 
-•	Add support for user profiles.
-•	Implement search and filter functionality.
-•	Enhance the comment system with nested comments.
-•	Add support for sorting articles by category or tags.
-•	Optimize backend APIs for better performance.
+- Add support for user profiles.
+- Implement search and filter functionality.
+- Enhance the comment system with nested comments.
+- Add support for sorting articles by category or tags.
+- Optimize backend APIs for better performance.
 
 ---
 
