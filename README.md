@@ -1,36 +1,122 @@
-# Welcome to Munaciella NC-news
+# Munaciella News
 
-Northcoders News serves as a front-end project designed to provide efficient access to application data through programming. Its primary aim is to emulate the construction of a functional backend service, much like Reddit, enabling fundamental operations such as browsing and organizing articles by topic. Additionally, it facilitates user interactions such as logging in, commenting, and voting on articles. Leveraging the Northcoders News API backend, which I personally developed, this project demonstrates the practical application of full-stack development. Crafting an application that replicates the intricate functionalities of a platform like Reddit presents both challenges and opportunities for learning. Maintaining a well-integrated and effective communication between the frontend and backend components is crucial for delivering a seamless user experience, especially when undertaking a project of this magnitude.
+A full-stack Reddit-inspired news web app for exploring, upvoting, downvoting, and managing articles and comments. Built with **React**, **Vite**, and **Tailwind CSS** on the frontend and integrated with a Node.js/Express backend.
 
-LINK TO THE DEPLOYED VERSION OF NORTHCODERS NEWS FRONTEND PROJECT CAN BE FOUND HERE: https://munaciella-news.netlify.app/ 
+---
 
-LINK TO THE NORTHCODERS NEWS API GITHUB REPOSITORY CAN BE FOUND HERE: https://github.com/munaciella/nc-news-
+## Table of Contents
 
-LINK TO THE HOSTED VERSION OF NORTHCODERS NEWS API BACKEND PROJECT CAN BE FOUND HERE: https://github.com/munaciella/NC-news
+- [Live Demo](#live-demo)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+  - [Installation](#installation)
+  - [Running Locally](#running-locally)
+- [Backend Repository](#backend-repository)
+- [Project Structure](#project-structure)
+- [Future Improvements](#future-improvements)
 
-If you wish to contribute to this repository please follow this steps.
+---
 
-FORK THIS REPOSITORY:
+## Live Demo
 
-On GitHub.com, navigate to the munaciella/nc-news repository. - In the top-right corner of the page, click Fork.
-Under "Owner," select the dropdown menu and click an owner for the forked repository.
-Click Create fork.
-CLONE YOUR FORK LOCALLY:
+🚀 Check out the live version of the app here: [Munaciella News](https://munaciella.netlify.app/)
 
-On GitHub.com, navigate to your fork of the Northcoders-News-API.
-Above the list of files, click Code.
-Copy the URL for the repository.
-Open Terminal.
-Change the current working directory to the location where you want the cloned directory.
-Type git clone, and then paste the URL you copied earlier.
-Press Enter. Your local clone will be created.
-INSTALL DEPENDENCIES:
+---
 
-after opening the repository in VS Code navigate to your terminal and run the following command:
+## Features
+
+- **Browse Articles**: View a list of articles sorted by popularity or date.
+- **Article Details**: Explore detailed information for each article, including comments.
+- **Vote System**: Upvote or downvote articles and comments.
+- **Authentication**: Secure login and logout functionality.
+- **Error Handling**: Informative error pages for smooth user experience.
+- **Responsive Design**: Fully responsive layout for desktop and mobile devices.
+
+---
+
+## Technologies Used
+
+### Frontend
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [React Router](https://reactrouter.com/)
+
+### Backend
+- [Node.js](https://nodejs.org/)
+- [Express](https://expressjs.com/)
+- [PostgreSQL](https://www.postgresql.org/)
+
+### Other Tools
+- [Netlify](https://netlify.com/) for frontend deployment
+- [Render](https://render.com/) or similar for backend hosting
+
+---
+
+## Getting Started
+
+### Installation
+
+1. **Clone the repository**:
+
+```bash
+git clone https://github.com/munaciella/munaciella_news_therevenge
+cd munaciella_news_therevenge
+```
+
+2. **Install dependencies**:
+
+```bash
 npm install
-RUN THE DEV SCRIPT FROM PACKAGE.JSON FILE:
+```
 
-navigate to your terminal and run the following command:
+### Running Locally
+
+	1.	Start the development server:
+
+```bash
 npm run dev
-The minimum version of Node.js to run the project is v18.17.1.
+```
 
+	2.	Open your browser and navigate to:
+
+http://localhost:5173
+
+## Backend Repository
+
+🔗 Check out the backend repository here: [Munaciella News Backend](https://github.com/munaciella/NC-news)
+
+The backend handles the following functionalities:
+	•	Article and comment management
+	•	User authentication
+	•	API endpoints for upvoting/downvoting
+
+## Project Structure
+
+munaciella-news/
+├── public/              # Static assets (logos, images, etc.)
+├── src/
+│   ├── Components/      # Reusable components (NavBar, Footer, etc.)
+│   ├── routes/          # Route pages (ArticlesList, ArticlePage, etc.)
+│   ├── App.jsx          # Main app structure
+│   ├── main.jsx         # Entry point for React
+│   └── index.css        # Global styles with Tailwind
+├── .eslintrc.cjs        # Linter configuration
+├── .prettierrc          # Code formatter configuration
+├── vite.config.js       # Vite configuration
+└── package.json         # Dependencies and scripts
+
+## Future Improvements
+	•	Add support for user profiles.
+	•	Implement search and filter functionality.
+	•	Introduce light/dark mode toggle.
+	•	Add support for sorting articles by category or tags.
+	•	Optimize backend APIs for better performance.
+
+#### Contact
+
+📧 Feel free to reach out to the developer:
+- [Francesco Vurchio Portfolio](https://www.francescovurchio.com/)
+- [LinkedIn](https://www.linkedin.com/in/francesco-vurchio/)
+- [GitHub](https://github.com/munaciella)
