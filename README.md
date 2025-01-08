@@ -130,6 +130,6 @@ munaciella-news/
 #### Contact
 
 📧 Feel free to reach out to the developer:
-- [Francesco Vurchio Portfolio](https://www.francescovurchio.com/)
+- [Francesco Vurchio Portfolio](https://francesco-dev.vercel.app/)
 - [LinkedIn](https://www.linkedin.com/in/francesco-vurchio/)
 - [GitHub](https://github.com/munaciella)
