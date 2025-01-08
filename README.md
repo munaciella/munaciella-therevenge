@@ -71,26 +71,33 @@ cd munaciella_news_therevenge
 npm install
 ```
 
+---
+
 ### Running Locally
 
-	1.	Start the development server:
+1.	Start the development server:
 
 ```bash
 npm run dev
 ```
 
-	2.	Open your browser and navigate to:
+2.	Open your browser and navigate to:
 
 http://localhost:5173
+
+---
 
 ## Backend Repository
 
 🔗 Check out the backend repository here: [Munaciella News Backend](https://github.com/munaciella/NC-news)
 
 The backend handles the following functionalities:
-	•	Article and comment management
-	•	User authentication
-	•	API endpoints for upvoting/downvoting
+
+•	Article and comment management
+•	User authentication
+•	API endpoints for upvoting/downvoting
+
+---
 
 ## Project Structure
 
@@ -107,12 +114,17 @@ munaciella-news/
 ├── vite.config.js       # Vite configuration
 └── package.json         # Dependencies and scripts
 
+---
+
 ## Future Improvements
-	•	Add support for user profiles.
-	•	Implement search and filter functionality.
-	•	Introduce light/dark mode toggle.
-	•	Add support for sorting articles by category or tags.
-	•	Optimize backend APIs for better performance.
+
+•	Add support for user profiles.
+•	Implement search and filter functionality.
+•	Enhance the comment system with nested comments.
+•	Add support for sorting articles by category or tags.
+•	Optimize backend APIs for better performance.
+
+---
 
 #### Contact
 
