@@ -100,7 +100,7 @@ The backend handles the following functionalities:
 ---
 
 ## Project Structure
-
+```plaintext
 munaciella-news/
 ├── public/              # Static assets (logos, images, etc.)
 ├── src/
@@ -113,6 +113,7 @@ munaciella-news/
 ├── .prettierrc          # Code formatter configuration
 ├── vite.config.js       # Vite configuration
 └── package.json         # Dependencies and scripts
+```
 
 ---
 
