@@ -61,8 +61,8 @@ A full-stack Reddit-inspired news web app for exploring, upvoting, downvoting, a
 1. **Clone the repository**:
 
 ```bash
-git clone https://github.com/munaciella/munaciella_news_therevenge
-cd munaciella_news_therevenge
+git clone https://github.com/munaciella/munaciella-therevenge
+cd munaciella-therevenge
 ```
 
 2. **Install dependencies**:
